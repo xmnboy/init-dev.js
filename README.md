@@ -1,6 +1,6 @@
 # `init-dev.js`
 
-Detect various _ready_ events within a variety of webviews. 
+Detect various _ready_ events within a variety of webviews.
 Intended for use with Cordova (aka PhoneGap) apps.
 
 The functions in this file are designed to reliably detect various _ready_ events
@@ -9,12 +9,12 @@ standard browser, App Preview, Crosswalk, etc.). It _unifies_ the commonly used
 ready events and is very helpful for moving a _web app_ to a _hybrid app_ scenario.
 
 This file has no external dependencies. It will generate a custom `app.Ready` event
-that you can use to start your application, rather than waiting on a `deviceready` 
+that you can use to start your application, rather than waiting on a `deviceready`
 or `documentready` or window `load` or similar events.
 
 You should not have to modify anything in this file to use it. See the example
-`index.html` file that accompanies this file for recommendations on the best placement 
-of this file relative to other files and for recommendations regarding the loading 
+`index.html` file that accompanies this file for recommendations on the best placement
+of this file relative to other files and for recommendations regarding the loading
 of other JavaScript files.
 
 There are many `console.log()` messages contained within this file. They can be used
@@ -28,8 +28,8 @@ Please read the comments within for details and for further documentation.
 
 There is an object named `dev.isDeviceready` which is very useful to inspect from
 a debug console to determine the timing of various ready events. It is filled with
-relative _timings_ (in milliseconds) that can help you understand how long it is 
-taking your app to get started (at least, the `cordova.js` part of your app). 
+relative _timings_ (in milliseconds) that can help you understand how long it is
+taking your app to get started (at least, the `cordova.js` part of your app).
 ```JavaScript
 dev.isDeviceReady = {                   // listed in approximate expected order
     a_startTime______:dev.timeStamp(),  // when we started execution of this module
