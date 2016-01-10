@@ -32,12 +32,12 @@ of a desire to build a more reliable and flexible "device ready" detector.
 
 Recommended JavaScript library load order for hybrid Cordova apps in your `index.html` file:
 
-* _Device-Independent_ JavaScript libraries (see notes below).
-* OPTIONAL: weinre debug script tag for remote console debug.
-* Cordova/PhoneGap device JavaScript library.
-* _Device-Dependent_ JavaScript libraries (see notes below).
-* Application JavaScript <script> tags and libraries.
-* OPTIONAL: weinre debug script tag for remote console debug.
+  * _Device-Independent_ JavaScript libraries (see notes below).
+  * weinre debug script tag for remote console debug (optional).
+  * Cordova/PhoneGap device JavaScript library.
+  * _Device-Dependent_ JavaScript libraries (see notes below).
+  * Application JavaScript <script> tags and libraries.
+  * weinre debug script tag for remote console debug (optional).
 
 In complex projects, the JavaScript load order is important. You must insure that the underlying
 device API native code finishes its init, which usually takes longer than the webview init...
