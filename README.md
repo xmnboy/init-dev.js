@@ -25,8 +25,29 @@ will only be executed if you set the `dev.Log` variable to `true` (see source).
 There are many comments in this file and the accompanying `index.html` sample file.
 Please read the comments within for details and for further documentation.
 
-BTW: "dev" means "device" in this context, not "develop," because it grew out
-of a desire to build a more reliable and flexible `deviceready` detector.
+There is an object named `dev.isDeviceready` which is very useful to inspect from
+a debug console to determine the timing of various ready events. It is filled with
+relative _timings_ (in milliseconds) that can help you understand how long it is 
+taking your app to get started (at least, the `cordova.js` part of your app). 
+```JavaScript
+dev.isDeviceReady = {                   // listed in approximate expected order
+    a_startTime______:dev.timeStamp(),  // when we started execution of this module
+    b_fnDocumentReady:false,            // detected document.readyState == "complete"
+    c_cordova_ready__:false,            // detected cordova device ready event
+    d_xdk_ready______:false,            // detected Intel XDK device ready event
+    e_fnDeviceReady__:false,            // entered onDeviceReady()
+    f_browser_ready__:false             // detected browser container
+} ;
+```
+The two most interesting elements in that object are `b_fnDocumentReady` and
+`c_cordova_ready__`. The names have extra underscore characters to make it
+easier to compare the results when you inspect it on the JavaScript debug console.
+The `d_xdk_ready` timing should normally be `false` since the Intel XDK "legacy"
+containers have been retired, but can show up if the old `intel.xdk.base` plugin
+is included as part of your app.
+
+> "dev" means "device" in this context, not "develop," because it grew out
+> of a desire to build a more reliable and flexible `deviceready` detector.
 
 # `index.html`
 
@@ -80,7 +101,7 @@ for both. (See the `init-dev.js` file for an example of how to do this, it gener
 interfere with capturing the `deviceready` event and should, therefore, be placed **BEFORE**
 the `cordova.js` library in the load order.
 
-**ALSO:** if you use `weinre` for debugging, you may have to experiment with the placement of your `weinre`
-script. Some recommended locations are shown within. If these locations do not work, you may have
-to experiment. The optimum placement can be app-specific, primarily as a function of the included
-JavaScript libraries and your initialization code.
+> If you use `weinre` for debugging, you may have to experiment with the placement of your `weinre`
+> script. Some recommended locations are shown within. If these locations do not work, you may have
+> to experiment. The optimum placement can be app-specific, primarily as a function of the included
+> JavaScript libraries and your initialization code.
