@@ -36,7 +36,7 @@ Recommended JavaScript library load order for hybrid Cordova apps in your `index
   * weinre debug script tag for remote console debug (optional).
   * Cordova/PhoneGap device JavaScript library.
   * _Device-Dependent_ JavaScript libraries (see notes below).
-  * Application JavaScript <script> tags and libraries.
+  * Application JavaScript \<script\> tags and libraries.
   * weinre debug script tag for remote console debug (optional).
 
 In complex projects, the JavaScript load order is important. You must insure that the underlying
