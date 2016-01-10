@@ -36,7 +36,7 @@
  * Please read the comments within for details and for further documentation.
  *
  * BTW: "dev" means "device" in this context, not "develop," because it grew out
- * of a desire to build a more reliable and flexible "device ready" detector.
+ * of a desire to build a more reliable and flexible "deviceready" detector.
  */
 
 
