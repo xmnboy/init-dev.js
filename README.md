@@ -1,6 +1,7 @@
 # `init-dev.js`
 
-Detect various _ready_ events within a variety of webviews. Intended for use within Cordova (aka PhoneGap) apps.
+Detect various _ready_ events within a variety of webviews. 
+Intended for use with Cordova (aka PhoneGap) apps.
 
 The functions in this file are designed to reliably detect various _ready_ events
 within a variety of containers (Intel XDK "legacy" container, Cordova 3+ container,
@@ -40,7 +41,7 @@ dev.isDeviceReady = {                   // listed in approximate expected order
 } ;
 ```
 The two most interesting elements in that object are `b_fnDocumentReady` and
-`c_cordova_ready__`. The names have extra underscore characters to make it
+`c_cordova_ready`. The object names have extra underscore characters to make it
 easier to compare the results when you inspect it on the JavaScript debug console.
 The `d_xdk_ready` timing should normally be `false` since the Intel XDK "legacy"
 containers have been retired, but can show up if the old `intel.xdk.base` plugin
@@ -50,6 +51,10 @@ is included as part of your app.
 > of a desire to build a more reliable and flexible `deviceready` detector.
 
 # `index.html`
+
+This file is provided simply as an example of where the `init-dev.js` file should
+be located within your `index.html` file. You do not need to use this `index.html`
+file to use the `init-dev.js` file -- it is provided for illustration only.
 
 Recommended JavaScript library load order for hybrid Cordova apps in your `index.html` file:
 
