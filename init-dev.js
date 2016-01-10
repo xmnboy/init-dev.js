@@ -1,6 +1,6 @@
 /*
- * Copyright © 2012-2015, Paul Fischer, Intel Corporation. All rights reserved.
- * Please see the included README.md file for license terms and conditions.
+ * Copyright © 2012-2016, Paul Fischer, Intel Corporation. All rights reserved.
+ * Please see the included LICENSE.md file for license terms and conditions.
  */
 
 
